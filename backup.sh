@@ -1,10 +1,13 @@
 #!/bin/bash
-BACKUPFILENAME=$(date +%d_%m_%Y_%H%M%S)
-echo $BACKUPFILENAME
 
+#backup file name
+BACKUPFILENAME=$(date +%d_%m_%Y_%H%M%S)
+
+#What is file or directory for backup
 echo What is path of folder or file what you want backup?
 read path
-echo $path
+
+#Backup process
 if [ -f $path ] || [ -d $path ]
 then 
 	tar -cvzf /tmp/backup/${BACKUPFILENAME}.tar.gz $path
